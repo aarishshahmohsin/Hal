@@ -91,7 +91,7 @@ const Videos: React.FC = () => {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white text-black">
       <Nav />
       <main className="py-12 mt-8 px-4 bg-gray-100">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -105,9 +105,7 @@ const Videos: React.FC = () => {
                 alt={video.title}
                 className="w-full h-auto"
               />
-              <p className="text-black text-sm mt-2">
-                {trimTitle(video.title)}
-              </p>
+              <p className="text-sm mt-2">{trimTitle(video.title)}</p>
               <button
                 onClick={() => openModal(video.videoUrl)}
                 className="mt-2 px-4 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition-colors duration-150"
