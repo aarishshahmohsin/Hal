@@ -1,9 +1,26 @@
-"use client";
+"use client"; 
 import React, { useState, useEffect } from "react";
 import { fetchData } from "./data";
 import { VideoModal } from "./videoModal";
 import Nav from "../nav";
 import Footer from "../footer";
+import { gql, useQuery } from "@apollo/client";
+
+
+// const GET_VIDEOS = gql`
+//   query {
+//     videos {
+//       data {
+//         videos {
+//           title
+//           thumbnailUrl
+//           videoUrl
+//         }
+//       }
+//     }
+//   }
+// `;
+
 
 interface Video {
   title: string;
@@ -12,6 +29,14 @@ interface Video {
 }
 
 const Videos: React.FC = () => {
+
+  // const {loading, error, data} = useQuery(GET_VIDEOS);
+
+  
+
+
+
+  
   const [videos, setVideos] = useState<Video[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [videosPerPage] = useState(8);
@@ -25,12 +50,35 @@ const Videos: React.FC = () => {
   };
 
   useEffect(() => {
-    const getData = async () => {
-      const response = await fetchData();
-      setVideos(response.data.videos[0].data.videos);
-    };
+    async function fetchVideos() {
+  const query = `
+    query {
+      videos {
+        title
+        thumbnailUrl
+        videoUrl
+      }
+    }
+  `;
 
-    getData();
+  try {
+    const response = await fetch("http://localhost:8080/graphql/", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query }),
+    });
+
+    const data = await response.json();
+    console.log(data.data.videos);
+    setVideos(data.data.videos)
+  } catch (error) {
+    console.error('Error fetching videos:', error);
+    setVideos([]);
+  }
+}
+    fetchVideos();
   }, []);
 
   const trimTitle = (title: string, maxLength: number = 50) =>
