@@ -103,7 +103,8 @@ const Videos: React.FC = () => {
               <img
                 src={video.thumbnailUrl}
                 alt={video.title}
-                className="w-full h-auto"
+                className="w-full rounded mb-2"
+                style={{ height: '200px', objectFit: 'cover' }}
               />
               <p className="text-sm mt-2">{trimTitle(video.title)}</p>
               <button
