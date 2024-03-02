@@ -22,9 +22,10 @@ export default function Home() {
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-black">
               Revolutionizing India's
-              <span className="text-[#4CAF4F]"> agriculture</span> with Hal,
-              where <span className="text-[#4CAF4F]">innovation</span> meets
-              tradition. Elevate your farming with smart insights and{" "}
+              <span className="text-[#4CAF4F]"> agriculture</span> with
+              technology, where{" "}
+              <span className="text-[#4CAF4F]">innovation</span> meets
+              tradition. Elevate your farming with smart insights and
               <span className="text-[#4CAF4F]"> sustainable </span>
               solutions.
             </p>

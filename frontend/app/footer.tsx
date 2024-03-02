@@ -65,19 +65,20 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Contact Us</h3>
             <ul className="mt-2">
               <li>
-                <span className="text-sm text-gray-600">
-                  Email: hal@gmail.com
-                </span>
+                <Link
+                  href="https://github.com/aarishshahmohsin"
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                >
+                  @aarish
+                </Link>
               </li>
               <li>
-                <span className="text-sm text-gray-600">
-                  Phone: +123 456 7890
-                </span>
-              </li>
-              <li>
-                <span className="text-sm text-gray-600">
-                  Address: ZHCET, AMU
-                </span>
+                <Link
+                  href="https://github.com/tayyab-ilyas"
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                >
+                  @tayyab
+                </Link>
               </li>
             </ul>
           </div>
@@ -103,7 +104,10 @@ export default function Footer() {
                   className="text-gray-600 hover:text-gray-900"
                 />
               </Link>
-              <Link href="#" className="text-gray-600 hover:text-gray-900">
+              <Link
+                href="https://github.com/aarishshahmohsin/Hal"
+                className="text-gray-600 hover:text-gray-900"
+              >
                 <FontAwesomeIcon
                   icon={faGithub}
                   className="text-gray-600 hover:text-gray-900"
