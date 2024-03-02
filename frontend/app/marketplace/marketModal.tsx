@@ -12,22 +12,25 @@ interface MarketplaceItem {
 interface MarketModalProps {
   item: MarketplaceItem;
   onClose: () => void;
+  action: 'buy' | 'rent';
 }
 
-export const MarketModal: React.FC<MarketModalProps> = ({ item, onClose }) => {
+export const MarketModal: React.FC<MarketModalProps> = ({ item, onClose, action }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
       <div className="bg-white p-4 rounded-lg max-w-xl max-h-full overflow-auto">
         <div className="flex flex-col items-center">
-        <img
-  src={item.thumbnail}
-  alt={item.name}
-  className="w-full rounded mb-2"
-  style={{ height: '200px', objectFit: 'cover' }} 
-/>
+          <img
+            src={item.image} 
+            alt={item.name}
+            className="w-full rounded mb-2"
+            style={{ height: '200px', objectFit: 'cover' }} 
+          />
           <h2 className="text-lg font-bold text-black">{item.name}</h2>
           <p className="text-black">Price: ₹{item.price_inr}</p>
           <p>Type: {item.type}</p>
+          {/* Optionally show different content based on the action */}
+          {action === 'rent' && <p className="text-black">This item is available for rent.</p>}
           <button
             onClick={onClose}
             className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700 transition-colors"
@@ -39,3 +42,4 @@ export const MarketModal: React.FC<MarketModalProps> = ({ item, onClose }) => {
     </div>
   );
 };
+
