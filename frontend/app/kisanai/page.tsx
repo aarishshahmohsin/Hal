@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import { useState } from "react"; // Import useState
+import { useState } from "react";
 import Nav from "../nav";
 import Footer from "../footer";
 import Image from "next/image";

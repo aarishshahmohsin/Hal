@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import { useState } from "react"; // Import useState
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Nav from "./nav";
