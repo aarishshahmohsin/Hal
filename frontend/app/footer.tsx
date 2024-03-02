@@ -29,7 +29,7 @@ export default function Footer() {
             <ul className="mt-2">
               <li>
                 <Link
-                  href="#"
+                  href="/"
                   className="text-sm text-gray-600 hover:text-gray-900"
                 >
                   Home
@@ -37,7 +37,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/kisanai"
                   className="text-sm text-gray-600 hover:text-gray-900"
                 >
                   KisanAi
@@ -45,7 +45,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="marketplace"
                   className="text-sm text-gray-600 hover:text-gray-900"
                 >
                   Marketplace
@@ -53,7 +53,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="videos"
                   className="text-sm text-gray-600 hover:text-gray-900"
                 >
                   Videos
