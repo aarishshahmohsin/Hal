@@ -8,7 +8,7 @@ import Dropdown from "react-dropdown"
 import 'react-dropdown/style.css';
 import { translation } from "./translate";
 
-const options = ['en', 'hi', 'bn', 'mr', 'ur', 'gu', 'kn', 'or', 'pa', 'ml'];
+const options = ['en', 'hi', 'bn', 'mr', 'ur', 'gu', 'kn', 'pa', 'ml'];
 
 
 export default function Nav(this: any) {

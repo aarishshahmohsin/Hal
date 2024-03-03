@@ -19,6 +19,8 @@ export const VideoModal = ({
     }
   };
 
+
+  console.log(embedUrl);
   return (
     <div
       className="fixed inset-0 w-full text-red-600 bg-black bg-opacity-50 z-50 flex justify-center items-center"
