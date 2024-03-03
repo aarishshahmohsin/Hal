@@ -3,7 +3,11 @@
 ## Features Description
 
 ### KisanAI
-- KisanAI is at the heart of Hal, a groundbreaking feature designed to bring the power of artificial intelligence to the fields of India's farmers. By analyzing various soil parameters such as pH, moisture content, and nutrient levels, along with considering the current season, KisanAI can recommend the most suitable crops to plant. This not only optimizes the agricultural output but also ensures sustainable farming practices are adhered to. The goal is to increase crop yields, reduce operational costs, and ultimately contribute to the welfare of the farming community.
+-KisanAI stands as a cornerstone of Hal, embodying a pioneering approach to incorporate artificial intelligence into the agricultural practices of India's farming communities. It is designed to analyze soil compositions based on three primary parameters: silt, clay, and sand levels, categorized into low, medium, and high. These parameters are critical in determining the physical characteristics of the soil, which in turn influence water retention, nutrient availability, and aeration - all vital factors for plant growth.
+
+By inputting the levels of silt, clay, and sand in their fields, farmers can leverage KisanAI to receive tailored recommendations on the most suitable crops to cultivate. This advice takes into consideration the unique composition of their soil, thereby optimizing agricultural outcomes. The intelligent recommendations ensure that farming practices are aligned with sustainable agriculture principles, aiming to boost crop yields, minimize resource wastage, and reduce operational costs.
+
+The overarching goal of KisanAI is to empower farmers with actionable insights derived from AI analysis, thus enhancing their productivity and ensuring the sustainability of their farming operations. By bridging traditional agricultural wisdom with cutting-edge technology, KisanAI seeks to support the well-being of the farming community, contributing to a future where agriculture is more efficient, sustainable, and profitable.
 
 ### Marketplace
 - The Hal Marketplace acts as a digital trading floor for agricultural products, where farmers can directly buy and sell produce without intermediaries. This feature empowers farmers by providing them with a platform to reach a wider market, ensuring fair pricing and transparency in transactions. From seeds, fertilizers, and equipment to harvested crops, the marketplace is a one-stop-shop for all agricultural needs, fostering a sense of community and mutual support among users.
