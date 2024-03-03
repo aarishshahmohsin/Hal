@@ -35,7 +35,7 @@ const resolvers = {
   Query: {
     posts: async () => {
       try {
-        const posts = await Post.find().populate("author");
+        const posts = await Post.find({});
         return posts;
       } catch (error) {
         console.error(error);
