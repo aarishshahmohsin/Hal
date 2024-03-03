@@ -9,8 +9,14 @@ import {
   faLinkedinIn,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import { useLangStore } from "@/store/zustand";
+import { translation } from "./translate";
+import { useEffect } from "react";
 
 export default function Footer() {
+  // @ts-ignore
+  const {language} = useLangStore();
+  useEffect(() => {}, [translation]);
   return (
     <footer className="bg-white mt-12 text-black">
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
@@ -21,18 +27,18 @@ export default function Footer() {
               <span className="text-xl font-semibold ml-3"></span>
             </Link>
             <p className="mt-2 mx-2 text-sm text-gray-500">
-              Revolutionizing agriculture with technology.
+             {translation( "Revolutionizing agriculture with technology", language)}
             </p>
           </div>
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
+            <h3 className="text-lg font-semibold">{translation("Quick Links", language)}</h3>
             <ul className="mt-2">
               <li>
                 <Link
                   href="/"
                   className="text-sm text-gray-600 hover:text-gray-900"
                 >
-                  Home
+                  {translation("Home", language)}
                 </Link>
               </li>
               <li>
@@ -40,7 +46,7 @@ export default function Footer() {
                   href="/kisanai"
                   className="text-sm text-gray-600 hover:text-gray-900"
                 >
-                  KisanAi
+                  {translation("KisanAi", language)}
                 </Link>
               </li>
               <li>
@@ -48,7 +54,7 @@ export default function Footer() {
                   href="marketplace"
                   className="text-sm text-gray-600 hover:text-gray-900"
                 >
-                  Marketplace
+                  {translation("Marketplace", language)}
                 </Link>
               </li>
               <li>
@@ -56,13 +62,13 @@ export default function Footer() {
                   href="videos"
                   className="text-sm text-gray-600 hover:text-gray-900"
                 >
-                  Videos
+                  {translation("Videos", language)}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h3 className="text-lg font-semibold">Contact Us</h3>
+            <h3 className="text-lg font-semibold">{translation("Contact Us", language)}</h3>
             <ul className="mt-2">
               <li>
                 <Link
@@ -83,7 +89,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h3 className="text-lg font-semibold">Follow Us</h3>
+            <h3 className="text-lg font-semibold">{translation("Follow Us", language)}</h3>
             <div className="flex mt-2">
               {/* Icons or text links to social media here */}
               <Link href="#" className="mr-3 text-gray-600 hover:text-gray-900">
@@ -118,7 +124,7 @@ export default function Footer() {
         </div>
         <div className="mt-8 border-t pt-4">
           <p className="text-sm text-gray-500 text-center">
-            © {new Date().getFullYear()} Hal. All rights reserved.
+            © {new Date().getFullYear()} {translation("Hal. All rights reserved", language)};
           </p>
         </div>
       </div>
