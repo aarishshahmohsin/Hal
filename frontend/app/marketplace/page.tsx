@@ -92,7 +92,7 @@ const MarketplacePage: React.FC = () => {
     return (
       <div className="min-h-screen bg-white text-black">
         <Nav />
-        <div className="bg-gray-100 h-40"/>
+        <div className="bg-gray-100 h-40" />
         <main className="py-12 px-4 bg-gray-100">
           <MoonLoader
             color={"green"}
@@ -103,7 +103,7 @@ const MarketplacePage: React.FC = () => {
             data-testid="loader"
           />
         </main>
-        <div className="bg-gray-100 h-40"/>
+        <div className="bg-gray-100 h-40" />
         <Footer />
       </div>
     );
@@ -113,8 +113,9 @@ const MarketplacePage: React.FC = () => {
     <div className="min-h-screen bg-white text-black">
       <Nav />
       <main className="py-12 mt-8 px-4 bg-gray-100">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-           {items.length > 0 && currentItems.map(
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {items.length > 0 &&
+            currentItems.map(
               (item, index) =>
                 item && (
                   <div
@@ -138,7 +139,7 @@ const MarketplacePage: React.FC = () => {
                       </button>
                       <button
                         onClick={() => openModal(item, "rent")}
-                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition-colors duration-150"
+                        className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-500 transition-colors duration-150"
                       >
                         Rent
                       </button>
