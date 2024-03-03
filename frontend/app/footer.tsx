@@ -15,7 +15,7 @@ import { useEffect } from "react";
 
 export default function Footer() {
   // @ts-ignore
-  const {language} = useLangStore();
+  const { language } = useLangStore();
   useEffect(() => {}, [translation]);
   return (
     <footer className="bg-white mt-12 text-black">
@@ -26,12 +26,17 @@ export default function Footer() {
               <Image alt="Hal logo" src="/Hal.png" width="80" height="80" />
               <span className="text-xl font-semibold ml-3"></span>
             </Link>
-            <p className="mt-2 mx-2 text-sm text-gray-500">
-             {translation( "Revolutionizing agriculture with technology", language)}
+            <p className="mt-2 mx-2 mr-4 text-sm text-gray-500">
+              {translation(
+                "Revolutionizing agriculture with technology",
+                language
+              )}
             </p>
           </div>
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h3 className="text-lg font-semibold">{translation("Quick Links", language)}</h3>
+            <h3 className="text-lg font-semibold">
+              {translation("Quick Links", language)}
+            </h3>
             <ul className="mt-2">
               <li>
                 <Link
@@ -68,7 +73,9 @@ export default function Footer() {
             </ul>
           </div>
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h3 className="text-lg font-semibold">{translation("Contact Us", language)}</h3>
+            <h3 className="text-lg font-semibold">
+              {translation("Contact Us", language)}
+            </h3>
             <ul className="mt-2">
               <li>
                 <Link
@@ -89,9 +96,10 @@ export default function Footer() {
             </ul>
           </div>
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h3 className="text-lg font-semibold">{translation("Follow Us", language)}</h3>
+            <h3 className="text-lg font-semibold">
+              {translation("Follow Us", language)}
+            </h3>
             <div className="flex mt-2">
-              {/* Icons or text links to social media here */}
               <Link href="#" className="mr-3 text-gray-600 hover:text-gray-900">
                 <FontAwesomeIcon
                   icon={faFacebookF}
@@ -124,7 +132,8 @@ export default function Footer() {
         </div>
         <div className="mt-8 border-t pt-4">
           <p className="text-sm text-gray-500 text-center">
-            © {new Date().getFullYear()} {translation("Hal. All rights reserved", language)};
+            © {new Date().getFullYear()}{" "}
+            {translation("Hal. All rights reserved", language)};
           </p>
         </div>
       </div>
