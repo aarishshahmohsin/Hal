@@ -21,7 +21,7 @@ export const MarketModal: React.FC<MarketModalProps> = ({ item, onClose, action 
       <div className="bg-white p-4 rounded-lg max-w-xl max-h-full overflow-auto">
         <div className="flex flex-col items-center">
           <img
-            src={item.image} 
+            src={item.thumbnail} 
             alt={item.name}
             className="w-full rounded mb-2"
             style={{ height: '200px', objectFit: 'cover' }} 

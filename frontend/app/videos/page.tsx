@@ -1,10 +1,11 @@
 "use client"; 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, CSSProperties } from "react";
 import { fetchData } from "./data";
 import { VideoModal } from "./videoModal";
 import Nav from "../nav";
 import Footer from "../footer";
 import { gql, useQuery } from "@apollo/client";
+import { MoonLoader } from "react-spinners";
 
 
 // const GET_VIDEOS = gql`
@@ -43,11 +44,20 @@ const Videos: React.FC = () => {
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [currentVideoUrl, setCurrentVideoUrl] = useState<string>("");
+  const [loading, setLoading] = useState(true);
 
   const openModal = (videoUrl: string) => {
     setCurrentVideoUrl(videoUrl);
     setIsModalOpen(true);
   };
+
+
+const override: CSSProperties = {
+  marginTop: "50px",
+  // display: "block",
+  margin: "auto",
+  borderColor: "green",
+};
 
   useEffect(() => {
     async function fetchVideos() {
@@ -73,6 +83,7 @@ const Videos: React.FC = () => {
     const data = await response.json();
     console.log(data.data.videos);
     setVideos(data.data.videos)
+    setLoading(false);
   } catch (error) {
     console.error('Error fetching videos:', error);
     setVideos([]);
@@ -89,6 +100,27 @@ const Videos: React.FC = () => {
   const currentVideos = videos.slice(indexOfFirstVideo, indexOfLastVideo);
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
+   if (loading) {
+    return (
+      <div className="min-h-screen bg-white text-black">
+        <Nav />
+        <div className="bg-gray-100 h-40"/>
+        <main className="py-12 px-4 bg-gray-100">
+          <MoonLoader
+            color={"green"}
+            loading={loading}
+            cssOverride={override}
+            // size={45}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </main>
+        <div className="bg-gray-100 h-40"/>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white text-black">

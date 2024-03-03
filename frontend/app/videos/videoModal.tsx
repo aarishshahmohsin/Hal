@@ -21,11 +21,11 @@ export const VideoModal = ({
 
   return (
     <div
-      className="fixed inset-0 text-red-600 bg-black bg-opacity-50 z-50 flex justify-center items-center"
+      className="fixed inset-0 w-full text-red-600 bg-black bg-opacity-50 z-50 flex justify-center items-center"
       onClick={handleBackgroundClick}
     >
       <div
-        className="bg-white p-4 rounded-lg max-w-xl max-h-full overflow-auto flex flex-col justify-between"
+        className="bg-white p-4 w-full rounded-lg max-w-xl max-h-full overflow-auto flex flex-col justify-between"
         onClick={(e) => e.stopPropagation()}
       >
         <iframe
