@@ -4,18 +4,15 @@ import { useEffect, useState } from "react"; // Import useState
 import Image from "next/image";
 import Link from "next/link";
 import { useLangStore } from "@/store/zustand";
-import Dropdown from "react-dropdown"
-import 'react-dropdown/style.css';
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
 import { translation } from "./translate";
 
-const options = ['en', 'hi', 'bn', 'mr', 'ur', 'gu', 'kn', 'pa', 'ml'];
-
+const options = ["en", "hi", "bn", "mr", "ur", "gu", "kn", "pa", "ml"];
 
 export default function Nav(this: any) {
-
-
   // @ts-ignore
-  const {setLanguage, language} = useLangStore(); // Get the setLanguage function from the store
+  const { setLanguage, language } = useLangStore(); // Get the setLanguage function from the store
   // useEffect(() => {}, [translation]);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleNav = () => {
@@ -56,12 +53,6 @@ export default function Nav(this: any) {
           {/* Home */}
         </Link>
         <Link
-          href="/kisanai"
-          className="text-sm font-medium hover:text-gray-600 block py-2"
-        >
-          {translation("KisanAi", lang)}
-        </Link>
-        <Link
           href="/forum"
           className="text-sm font-medium hover:text-gray-600 block py-2"
         >
@@ -81,7 +72,7 @@ export default function Nav(this: any) {
         </Link>
         <button className="bg-[#4CAF4F] text-white px-2 py-1 rounded-md mt-2 md:mt-0 hover:bg-green-800">
           <Link href="/signup" className="text-sm font-medium">
-            {translation("Sign Up", lang)}
+            {translation("KisanAi", lang)}
           </Link>
         </button>
         <Dropdown

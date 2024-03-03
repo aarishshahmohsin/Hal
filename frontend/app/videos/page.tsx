@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import React, { useState, useEffect, CSSProperties } from "react";
 import { fetchData } from "./data";
 import { VideoModal } from "./videoModal";
@@ -6,7 +6,6 @@ import Nav from "../nav";
 import Footer from "../footer";
 import { gql, useQuery } from "@apollo/client";
 import { MoonLoader } from "react-spinners";
-
 
 // const GET_VIDEOS = gql`
 //   query {
@@ -22,7 +21,6 @@ import { MoonLoader } from "react-spinners";
 //   }
 // `;
 
-
 interface Video {
   title: string;
   thumbnailUrl: string;
@@ -30,14 +28,8 @@ interface Video {
 }
 
 const Videos: React.FC = () => {
-
   // const {loading, error, data} = useQuery(GET_VIDEOS);
 
-  
-
-
-
-  
   const [videos, setVideos] = useState<Video[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [videosPerPage] = useState(8);
@@ -51,17 +43,16 @@ const Videos: React.FC = () => {
     setIsModalOpen(true);
   };
 
-
-const override: CSSProperties = {
-  marginTop: "50px",
-  // display: "block",
-  margin: "auto",
-  borderColor: "green",
-};
+  const override: CSSProperties = {
+    marginTop: "50px",
+    // display: "block",
+    margin: "auto",
+    borderColor: "green",
+  };
 
   useEffect(() => {
     async function fetchVideos() {
-  const query = `
+      const query = `
     query {
       videos {
         title
@@ -71,24 +62,24 @@ const override: CSSProperties = {
     }
   `;
 
-  try {
-    const response = await fetch("http://localhost:8080/graphql/", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ query }),
-    });
+      try {
+        const response = await fetch("http://localhost:4000/graphql/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ query }),
+        });
 
-    const data = await response.json();
-    console.log(data.data.videos);
-    setVideos(data.data.videos)
-    setLoading(false);
-  } catch (error) {
-    console.error('Error fetching videos:', error);
-    setVideos([]);
-  }
-}
+        const data = await response.json();
+        console.log(data.data.videos);
+        setVideos(data.data.videos);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching videos:", error);
+        setVideos([]);
+      }
+    }
     fetchVideos();
   }, []);
 
@@ -101,11 +92,11 @@ const override: CSSProperties = {
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
-   if (loading) {
+  if (loading) {
     return (
       <div className="min-h-screen bg-white text-black">
         <Nav />
-        <div className="bg-gray-100 h-40"/>
+        <div className="bg-gray-100 h-40" />
         <main className="py-12 px-4 bg-gray-100">
           <MoonLoader
             color={"green"}
@@ -116,7 +107,7 @@ const override: CSSProperties = {
             data-testid="loader"
           />
         </main>
-        <div className="bg-gray-100 h-40"/>
+        <div className="bg-gray-100 h-40" />
         <Footer />
       </div>
     );
@@ -136,7 +127,7 @@ const override: CSSProperties = {
                 src={video.thumbnailUrl}
                 alt={video.title}
                 className="w-full rounded mb-2"
-                style={{ height: '200px', objectFit: 'cover' }}
+                style={{ height: "200px", objectFit: "cover" }}
               />
               <p className="text-sm mt-2">{trimTitle(video.title)}</p>
               <button
