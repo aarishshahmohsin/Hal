@@ -10,7 +10,9 @@ async function getPlaylistVideos() {
     "https://www.googleapis.com/youtube/v3/search?q=indian+farming+videos&type=video&part=snippet&key=AIzaSyCP5ULHeYyyjCbJIrQhEOU7HzUqGaNOR4Y&maxResults=150";
 
   try {
-    const response = await axios.get(apiUrl);
+    const response = await axios.get(apiUrl, {
+      timeout: 1000,
+    });
     console.log(response.data.items);
     const data = response.data;
 
