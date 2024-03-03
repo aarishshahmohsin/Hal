@@ -27,11 +27,17 @@ type Item {
   thumbnail: String!
 }
 
+type soilRes {
+  soil: String!
+  suitableCrops: [String!]!
+}
+
 type Query {
   posts: [Post!]!
   videos: [Video]!
   marketplace(number: Int!): [Item]!
   authenticate(token: String!): User
+  soilResults(list: [Float]): soilRes
 }
 
 type authenticate {

@@ -4,6 +4,7 @@ import User from '../models/User';
 import fetch_marketplace from '../scripts/marketplace';
 import getPlaylistVideos from '../scripts/videos';
 import * as jwt from 'jsonwebtoken';
+import { runFetchSugeestion } from '../scripts/ai';
 
 const privateKey = 'rootroute'; // Replace with a secure secret key
 
@@ -62,6 +63,15 @@ const resolvers = {
     },
     authenticate: async (_: any, { token }: any) => {
       return verifyToken(token);
+    },
+    soilResults: async (_: any, { sizes }: any) => {
+      try {
+        const soilTypeResult = await runFetchSugeestion(sizes);
+        return soilTypeResult;
+      } catch (error) {
+        console.error(error);
+        throw new Error("Failed to fetch soil type");
+      }
     },
   },
   Mutation: {

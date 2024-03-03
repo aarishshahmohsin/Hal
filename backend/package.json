@@ -59,7 +59,8 @@
     "helmet": "^3.14.0",
     "jsonwebtoken": "^9.0.2",
     "machinelearn": "^2.1.5",
-    "mongoose": "^8.2.0"
+    "mongoose": "^8.2.0",
+    "openai": "^4.28.4"
   },
   "jest": {
     "transform": {
